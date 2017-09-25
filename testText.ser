@@ -1,0 +1,4 @@
+Sit wagon = {number: 1, comfort: 2, people: 23, luggage: 45 }
+Sleep wagon = {number: 2, comfort: 3, people: 67, luggage: 78 }
+Sit wagon = {number: 3, comfort: 4, people: 56, luggage: 34 }
+Sit wagon = {number: 4, comfort: 7, people: 89, luggage: 90 }
