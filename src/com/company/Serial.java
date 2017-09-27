@@ -52,7 +52,9 @@ public class Serial implements Serializable{
         try {
             FileOutputStream fileOut = new FileOutputStream(file_name + "." + format);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            for(int i=0;i<num;i++){
+            int n = set.size();
+            out.write(n);
+            for(int i=num-1;i>=0;i--){
                 out.writeObject(set.get(i));
             }
             //out.writeObject(obj);
@@ -74,8 +76,8 @@ public class Serial implements Serializable{
         try {
             FileInputStream fileIn = new FileInputStream(file_name + "." + format);
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            while (in.available()>=0) {
-                retObj = in.readObject();
+            int n = in.read();
+            for (int i=0;i<n;i++) {
                 wagon = (Wagon) in.readObject();
                 set.add(wagon);
             }

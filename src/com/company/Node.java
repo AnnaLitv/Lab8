@@ -1,7 +1,7 @@
 package com.company;
 import java.io.Serializable;
 
-public class Node<T> implements Serializable {
+public class Node<Wagon> implements Serializable {
     private Node next;
     private Wagon item;
 
@@ -35,8 +35,5 @@ public class Node<T> implements Serializable {
         this.item = item;
     }
 
-   /* public Wagon getNumberWag() {
-        return item.getNumberWag();
-    }*/
 }
 

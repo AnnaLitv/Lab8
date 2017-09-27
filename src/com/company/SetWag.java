@@ -5,10 +5,7 @@ import java.util.*;
 public class SetWag implements Set<Wagon>,Serializable {
 
     private int size=0;
-  //  private Node<Wagon> next;
-   // private Node<Wagon> item;
     private Node<Wagon> first;
-  //  private Wagon wagon;
 
     @Override
     public int size() {
@@ -46,7 +43,7 @@ public class SetWag implements Set<Wagon>,Serializable {
         wag=first;
         int i=0;
         while (wag!=null){
-            if(equals(get(i),wg))
+            if(get(i).equals(wg))
             return  true;
             wag = wag.getNext();
             i++;
@@ -99,7 +96,7 @@ public class SetWag implements Set<Wagon>,Serializable {
            Node<Wagon> wag;
            wag=first;
            int i=0;
-           if(equals(get(i),wg)){
+           if(get(i).equals(wg)){
                first = first.getNext();
                size--;
                return  true;
@@ -107,7 +104,7 @@ public class SetWag implements Set<Wagon>,Serializable {
            else {
                i++;
                while (wag.hasNext()) {
-                   if (equals(get(i),wg))
+                   if (get(i).equals(wg))
                    {
                        wag.setNext(wag.getNext().getNext());
                        size--;
@@ -203,12 +200,16 @@ public class SetWag implements Set<Wagon>,Serializable {
             i++;
         }
     }
-    public boolean equals(Wagon n1, Wagon n2){
-        if(n1.getNumberWag()==n2.getNumberWag()&&+
-                n1.getComfort()==n2.getComfort()&&+
-                n1.getLuggage()==n2.getLuggage()&&+
-                n1.getPeople()==n2.getPeople())
-            return true;
-        else return false;
-    }
+
+    public boolean equals( SetWag sw2){
+       if(sw2 instanceof SetWag && this instanceof SetWag){
+           if (this.size()==sw2.size()){
+               for(int i=0;i<this.size();i++){
+                   if(this.get(i).equals(sw2.get(i)))return true;
+                   else return false;
+               }
+           }
+       }
+       return false;
+   }
 }

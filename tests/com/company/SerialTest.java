@@ -19,15 +19,32 @@ public class SerialTest {
         SetWag sw2 = new SetWag();
         sw2 = (SetWag)ser.DeserIn("testser","ser");
         int num = 0;
-        for(int i=0;i<4;i++){
+        /*for(int i=0;i<4;i++){
             if(sw.equals(sw.get(i),sw2.get(i)))
                 num++;
-        }
-        assertEquals(4,num);
+        }*/
+        boolean it = sw.equals(sw2);
+        assertEquals(true,it);
     }
 
     @Test
     public void deserInObj() throws Exception {
+        SetWag sw = new SetWag();
+        sw.add(new WagonSit(1,2,23,45));
+        sw.add(new WagonSleep(2,3,67,78));
+        sw.add(new WagonSit(3,4,56,34));
+        sw.add(new WagonSit(4,7,89,90));
+        Serial ser = new Serial();
+        ser.SerObj(sw,"testobj","ser",sw.size());
+        SetWag sw2 = new SetWag();
+        sw2 = (SetWag)ser.DeserInObj("testobj","ser");
+        int num = 0;
+       /* for(int i=0;i<4;i++){
+            if(sw.equals(sw.get(i),sw2.get(i)))
+                num++;
+        }*/
+        boolean it = sw.equals(sw2);
+        assertEquals(true,it);
     }
 
 
@@ -43,11 +60,8 @@ public class SerialTest {
         SetWag sw1 = new SetWag();
         sw1=ser.parse(ser.ReadText("testText.ser"));
         int num=0;
-        for(int i=0;i<4;i++){
-            if(sw.equals(sw.get(i),sw1.get(i)))
-                num++;
-        }
-        assertEquals(4,num);
+        boolean it = sw.equals(sw1);
+        assertEquals(true,it);
     }
 
 }

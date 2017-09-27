@@ -1,4 +1,3 @@
-Sit wagon = {number: 3, comfort: 6, people: 34, luggage: 23 }
 Sit wagon = {number: 4, comfort: 5, people: 34, luggage: 23 }
 Sleep wagon = {number: 5, comfort: 5, people: 56, luggage: 34 }
 Sit wagon = {number: 6, comfort: 3, people: 34, luggage: 23 }

@@ -122,7 +122,7 @@ public class Main {
                     int num;
                     num=set.size();
                     serobj.SerObj(set,"Setser","ser",num);
-                    System.out.println(num);
+                   // System.out.println(num);
                     break;
                 }
                 case 9:{

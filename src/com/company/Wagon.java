@@ -51,7 +51,7 @@ public abstract class Wagon implements Serializable {
     public int getLuggage(){
         return luggage;
     }
-    public void setNumberWag(int numberWag){
+   /* public void setNumberWag(int numberWag){
         this.numberWag = numberWag;
     }
 
@@ -65,7 +65,7 @@ public abstract class Wagon implements Serializable {
 
     public void setLuggage(int luggage){
         this.luggage = luggage;
-    }
+    }*/
 
     public void print(Wagon wagon) {
         if (isSit()) {
@@ -103,6 +103,16 @@ public abstract class Wagon implements Serializable {
         System.out.println("********************************************");
     }
 
+    public boolean equals( Wagon n2){
+        if(this instanceof Wagon && n2 instanceof Wagon) {
+            if (this.getNumberWag() == n2.getNumberWag() && +
+                    this.getComfort() == n2.getComfort() && +
+                    this.getLuggage() == n2.getLuggage() && +
+                    this.getPeople() == n2.getPeople())
+                return true;
+            else return false;
+        }else  return false;
+    }
     public abstract boolean isSit();
 }
 
